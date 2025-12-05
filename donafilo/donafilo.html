@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dona Filó – Arte Criativa em Tecido</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #A29BFE;
+      --background: #FFFFFF;
+      --background-alt: #F8F9FA;
+      --text-main: #000000;
+      --text-muted: #6c757d;
+      --border-soft: #e0e0e0;
+      --radius-lg: 24px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--background);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout base */
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-alt {
+      background: var(--background-alt);
+    }
+
+    .section-title {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-size: 2rem; /* ~32px */
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Header / Navegação */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 1px solid #f1f1f1;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-brand-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .nav-brand-tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.22s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.55rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease-out;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 5rem 0 4rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-size: 3rem; /* 48px */
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-highlight {
+      background: rgba(162, 155, 254, 0.12);
+      border-radius: 999px;
+      padding: 0.15rem 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.8rem 1.8rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.22s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(162, 155, 254, 0.35);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border-soft);
+      color: var(--text-main);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: #fff;
+    }
+
+    .hero-card img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 1.2rem;
+      background: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 14px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+      font-size: 0.8rem;
+    }
+
+    .hero-badge strong {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 0.15rem;
+    }
+
+    /* Sobre */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(162, 155, 254, 0.12);
+      color: var(--primary);
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .about-text p + p {
+      margin-top: 0.85rem;
+    }
+
+    .about-list {
+      margin-top: 1.4rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .about-list li {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .about-list li::before {
+      content: "✶";
+      margin-right: 0.5rem;
+      color: var(--primary);
+    }
+
+    .about-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Categorias / Destaques */
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.7rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.4rem 1.5rem;
+      border: 1px solid rgba(0,0,0,0.03);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .card-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Galeria */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .gallery-item {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-item img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .gallery-caption {
+      padding: 0.8rem 1rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .gallery-caption strong {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    /* Processo */
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .step {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.4rem 1.5rem;
+      border: 1px dashed rgba(162, 155, 254, 0.5);
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .step-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Depoimentos (opcional) */
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial {
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.4rem 1.5rem;
+      border: 1px solid rgba(0,0,0,0.03);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.04);
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 0.8rem;
+      color: var(--text-main);
+    }
+
+    /* Contato */
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--text-muted);
+    }
+
+    .contact-value {
+      font-weight: 600;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 1.4rem;
+    }
+
+    .contact-photo {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(0,0,0,0.05);
+      padding: 1.8rem 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    /* Animações: fade-in ao rolar */
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsivo */
+
+    @media (max-width: 960px) {
+      .hero-inner,
+      .about-grid,
+      .cards-grid,
+      .gallery-grid,
+      .steps-grid,
+      .testimonials,
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .cards-grid,
+      .gallery-grid,
+      .steps-grid,
+      .testimonials {
+        gap: 1.1rem;
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .hero-title {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        inset: 72px 1.5rem auto;
+        background: #ffffff;
+        box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+        border-radius: 18px;
+        padding: 1rem 1.4rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.9rem;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 0.22s ease, transform 0.22s ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <!-- Troque o src pelo arquivo do logotipo -->
+        <img src="images/logo-donafilo.jpg" alt="Logo Dona Filó" class="nav-logo-img" />
+        <div class="nav-brand">
+          <span class="nav-brand-name">Dona Filó</span>
+          <span class="nav-brand-tagline">arte criativa em tecido</span>
+        </div>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#pecas">Peças únicas</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+        <a href="#contato" class="nav-cta">Encomendar peça</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="inicio" class="hero">
+    <div class="container hero-inner fade-section">
+      <div>
+        <div class="hero-kicker">arte criativa • feito à mão</div>
+        <h1 class="hero-title">
+          Patchwork, capas e bolsas
+          <br />
+          para encantar leitores e momentos.
+        </h1>
+
+        <div class="hero-highlight">
+          ✶ Cada peça é única &nbsp;·&nbsp; costurada com calma e afeto
+        </div>
+
+        <p class="hero-desc">
+          A <strong>Dona Filó</strong> cria capas para livros e e-readers, nécessaires, bolsas e peças em patchwork
+          com combinações delicadas de cores e estampas. Feitas em pequenas tiragens, pensadas para quem ama detalhes.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#galeria" class="btn btn-primary">Ver peças disponíveis</a>
+          <a
+            href="https://www.instagram.com/donafiloartecriativa"
+            target="_blank"
+            rel="noreferrer"
+            class="btn btn-ghost"
+          >
+            Ver no Instagram
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>✶ Capas para livros &amp; e-readers</span>
+          <span>✶ Bolsas, nécessaires e pouches</span>
+          <span>✶ Peças em patchwork colorido</span>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <div class="hero-card">
+          <!-- Foto de destaque de alguma nécessaire / bolsa -->
+          <img src="images/produto-hero.jpg" alt="Peças artesanais Dona Filó" />
+        </div>
+        <div class="hero-badge">
+          <strong>Feito em Lisboa, com alma artesanal.</strong>
+          Ideal para presentear leitores, professoras, amigas e a si mesma.
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="section-alt">
+      <div class="container about-grid fade-section">
+        <div class="about-text">
+          <div class="pill">sobre a dona filó</div>
+          <h2 class="section-title">Arte em tecido que abraça histórias.</h2>
+          <p>
+            Dona Filó nasce do amor por livros, cores e texturas. Cada escolha de tecido, cada costura e cada detalhe
+            é pensada com calma para criar peças que guardam histórias: a sua, a de um personagem favorito, a de um
+            presente especial.
+          </p>
+          <p>
+            O foco está em peças funcionais e cheias de personalidade: capas acolchoadas para proteger livros e
+            e-readers, nécessaires para o dia a dia, bolsas em patchwork e acessórios que deixam a rotina mais leve.
+          </p>
+
+          <ul class="about-list">
+            <li>Produção artesanal em pequena escala.</li>
+            <li>Combinações de cores suaves com estampas delicadas.</li>
+            <li>Acabamentos internos bem cuidados e acolchoados.</li>
+            <li>Possibilidade de encomendas sob medida, conforme o livro ou dispositivo.</li>
+          </ul>
+        </div>
+
+        <div class="about-image">
+          <!-- Use uma foto com detalhe do patchwork (estrela, por exemplo) -->
+          <img src="images/produto-patchwork-estrela.jpg" alt="Detalhe de peça em patchwork da Dona Filó" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Peças / Categorias -->
+    <section id="pecas">
+      <div class="container fade-section">
+        <h2 class="section-title">Peças pensadas para quem ama detalhes.</h2>
+        <p class="section-subtitle">
+          Alguns tipos de peças que você encontra ou pode encomendar com a Dona Filó. Cada combinação de tecidos é
+          única – assim como quem vai usar.
+        </p>
+
+        <div class="cards-grid">
+          <article class="card">
+            <span class="card-label">para leitores</span>
+            <h3 class="card-title">Capas para livros</h3>
+            <p class="card-text">
+              Capas acolchoadas ajustáveis, para proteger livros na mochila ou na bolsa, com marcadores em fita
+              combinando.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-label">digital com carinho</span>
+            <h3 class="card-title">Capas para e-readers</h3>
+            <p class="card-text">
+              Capinhas feitas sob medida para o modelo do seu leitor digital, com fechamento em botão ou zíper e
+              interior macio.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-label">para o dia a dia</span>
+            <h3 class="card-title">Nécessaires &amp; pouches</h3>
+            <p class="card-text">
+              Organizadores para bolsa com zíper, ideais para maquiagem, canetas, fios, marcadores e pequenos tesouros.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-label">patchwork</span>
+            <h3 class="card-title">Bolsas em patchwork</h3>
+            <p class="card-text">
+              Bolsas estruturadas com blocos de patchwork, alças confortáveis e forro interno colorido.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-label">presentes</span>
+            <h3 class="card-title">Kits para presentear</h3>
+            <p class="card-text">
+              Combinações de capa, nécessaire e marcador para surpreender alguém especial com um presente feito à mão.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-label">sob medida</span>
+            <h3 class="card-title">Encomendas personalizadas</h3>
+            <p class="card-text">
+              Tem um livro de tamanho diferente, um dispositivo específico ou uma ideia em mente? Vamos criar juntas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria de peças -->
+    <section id="galeria" class="section-alt">
+      <div class="container fade-section">
+        <h2 class="section-title">Um pouco da delicadeza da Dona Filó.</h2>
+        <p class="section-subtitle">
+          Veja algumas peças já produzidas. As fotos podem mudar com o tempo – acompanhe o Instagram para ver as
+          novidades em primeira mão.
+        </p>
+
+        <div class="gallery-grid">
+          <article class="gallery-item">
+            <!-- nécessaire xadrez azul -->
+            <img src="images/necessaire-xadrez-azul.jpg" alt="Nécessaire acolchoada xadrez azul" />
+            <div class="gallery-caption">
+              <strong>Nécessaire acolchoada</strong>
+              Xadrez azul clarinho, zíper contrastante e acabamento interno delicado.
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <!-- bolsa patchwork laranja -->
+            <img src="images/bolsa-patchwork-laranja.jpg" alt="Bolsa em patchwork laranja e azul" />
+            <div class="gallery-caption">
+              <strong>Bolsa em patchwork</strong>
+              Blocos em tons de laranja e azul, alça confortável e estrutura macia.
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <!-- capas/quase carteira coloridas -->
+            <img src="images/conjunto-necessaires-coloridas.jpg" alt="Conjunto de nécessaires coloridas" />
+            <div class="gallery-caption">
+              <strong>Conjunto de pouches</strong>
+              Vários tamanhos para organizar miudezas, fios, canetas e maquiagem.
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <!-- capa livro com coelho (Alice) -->
+            <img src="images/capa-livro-alice.jpg" alt="Capa de livro com estampa de cachorrinhos e listras" />
+            <div class="gallery-caption">
+              <strong>Capa para livro</strong>
+              Proteção acolchoada com estampa divertida e marcador em fita combinando.
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <!-- capa kindle -->
+            <img src="images/capa-kindle-cachorros.jpg" alt="Capa para e-reader com estampa de cachorrinhos" />
+            <div class="gallery-caption">
+              <strong>Capa para e-reader</strong>
+              Perfeita para transportar o Kindle ou outro leitor digital na mochila.
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <!-- capa livro estrela colorida -->
+            <img src="images/capa-livro-estrela.jpg" alt="Capa de livro patchwork em formato de estrela" />
+            <div class="gallery-caption">
+              <strong>Capa patchwork estrela</strong>
+              Bloco em formato de estrela com cores suaves, ideal para livros queridos.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section>
+      <div class="container fade-section">
+        <h2 class="section-title">Como encomendar a sua peça.</h2>
+        <p class="section-subtitle">
+          O processo é leve e próximo, como uma boa conversa de costura. Assim você garante uma peça que combina com
+          você – ou com quem vai receber o presente.
+        </p>
+
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Escreva para a Dona Filó</h3>
+            <p class="step-text">
+              Envie uma mensagem pelo Instagram ou WhatsApp contando qual peça você procura e para qual tamanho de livro
+              ou dispositivo.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Escolha tecidos e detalhes</h3>
+            <p class="step-text">
+              Juntas, vocês escolhem combinações de tecidos, tipo de fechamento, cores internas e outros acabamentos.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Costura, carinho &amp; envio</h3>
+            <p class="step-text">
+              A peça é produzida com calma e enviada com todo cuidado. Você recebe algo único, pronto para fazer parte
+              da rotina.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos (opcional) -->
+    <section class="section-alt">
+      <div class="container fade-section">
+        <h2 class="section-title">Palavras de quem já recebeu.</h2>
+        <p class="section-subtitle">
+          Alguns comentários que poderiam aparecer aqui. Você pode depois substituir pelos depoimentos reais de
+          clientes.
+        </p>
+
+        <div class="testimonials">
+          <article class="testimonial">
+            “A capa é ainda mais linda ao vivo! Os acabamentos são perfeitos e meu livro agora vai comigo pra todo
+            lado.”
+            <strong>Ana, leitora apaixonada</strong>
+          </article>
+
+          <article class="testimonial">
+            “Comprei um kit de nécessaire e capa de livro para presentear uma amiga professora. Ela se emocionou!”
+            <strong>Marina, presenteando</strong>
+          </article>
+
+          <article class="testimonial">
+            “A capa sob medida ficou perfeita pro meu e-reader. Parece abraço de tecido, de tão acolchoada.”
+            <strong>João, leitor digital</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+      <div class="container contact-inner fade-section">
+        <div>
+          <div class="pill">contato &amp; encomendas</div>
+          <h2 class="section-title">Vamos costurar uma ideia juntas?</h2>
+          <p class="section-subtitle">
+            Para encomendas, dúvidas ou pedidos especiais, fale diretamente com a Dona Filó. Responder com calma também
+            faz parte do processo artesanal. ♡
+          </p>
+
+          <div class="contact-card">
+            <div class="contact-row">
+              <div>
+                <div class="contact-label">Instagram</div>
+                <div class="contact-value">@donafiloartecriativa</div>
+              </div>
+              <a
+                href="https://www.instagram.com/donafiloartecriativa"
+                class="btn btn-ghost"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Abrir Instagram
+              </a>
+            </div>
+
+            <!-- Substitua o link do WhatsApp pelo número correto -->
+            <div class="contact-row" style="margin-top: 1rem;">
+              <div>
+                <div class="contact-label">WhatsApp</div>
+                <div class="contact-value">(+351) 9X XXX XXXX</div>
+              </div>
+              <a
+                href="https://wa.me/3519XXXXXXXX"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Falar no WhatsApp
+              </a>
+            </div>
+
+            <p class="contact-note">
+              Também é possível combinar encomendas sob medida. Envie fotos dos seus livros ou do seu e-reader para
+              garantir a medida perfeita.
+            </p>
+
+            <div class="contact-links">
+              <a href="#galeria" class="btn btn-ghost">Ver mais peças</a>
+              <a href="#inicio" class="btn btn-ghost">Voltar ao topo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-photo">
+          <!-- Escolha uma foto bonita de conjunto de peças ou bolsas -->
+          <img src="images/produtos-conjunto.jpg" alt="Conjunto de peças artesanais Dona Filó" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Dona Filó – arte criativa em tecido. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/donafiloartecriativa" target="_blank" rel="noreferrer">Instagram</a>
+        <!-- Opcional: adicionar link para e-mail ou outra rede -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS: menu mobile, ano atual e animações de scroll -->
+  <script>
+    // Ano atual no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu mobile
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Fecha menu ao clicar em um link (mobile)
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Animações de fade-in ao rolar
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.18
+      }
+    );
+
+    document.querySelectorAll('.fade-section').forEach((section) => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>

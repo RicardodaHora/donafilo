@@ -1,0 +1,19 @@
+# Arquivos temporários do WhatsApp
+WhatsApp Image*.jpeg
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de backup
+*.zip
+*.bak
+*~
+
+# Arquivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
